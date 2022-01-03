@@ -263,15 +263,24 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         addItems(clusterManager);
 
         GeoJsonLayer layer = null;
+        GeoJsonLayer layer2 = null;
+        GeoJsonLayer layer3 = null;
+        GeoJsonLayer layer4 = null;
+        GeoJsonLayer layer5 = null;
+        GeoJsonLayer layer6 = null;
+
         try {
-            layer = new GeoJsonLayer(map, R.raw.mvcrime,this);
+            layer = new GeoJsonLayer(map, R.raw.part1,this);
+            layer2 = new GeoJsonLayer(map, R.raw.mvcrime,this);
+            layer3 = new GeoJsonLayer(map, R.raw.part8,this);
+            layer4 = new GeoJsonLayer(map, R.raw.part9,this);
+            layer5 = new GeoJsonLayer(map, R.raw.part7,this);
+            layer6 = new GeoJsonLayer(map, R.raw.part10,this);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        int i = 0;
 
         for (GeoJsonFeature feature : layer.getFeatures()) {
 
@@ -279,12 +288,45 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
             GeoJsonPoint point = (GeoJsonPoint) geo;
             MVCrimePoint item = new MVCrimePoint(point.getCoordinates().latitude, point.getCoordinates().longitude, "Title ", "Snippet ");
             clusterManager.addItem(item);
-            // Do something to the feature
-            int breakpoint2 = 0;
+        }
+
+        for (GeoJsonFeature feature : layer2.getFeatures()) {
+
+            Geometry geo = feature.getGeometry();
+            GeoJsonPoint point = (GeoJsonPoint) geo;
+            MVCrimePoint item = new MVCrimePoint(point.getCoordinates().latitude, point.getCoordinates().longitude, "Title ", "Snippet ");
+            clusterManager.addItem(item);
+        }
+        for (GeoJsonFeature feature : layer3.getFeatures()) {
+
+            Geometry geo = feature.getGeometry();
+            GeoJsonPoint point = (GeoJsonPoint) geo;
+            MVCrimePoint item = new MVCrimePoint(point.getCoordinates().latitude, point.getCoordinates().longitude, "Title ", "Snippet ");
+            clusterManager.addItem(item);
+        }
+        for (GeoJsonFeature feature : layer4.getFeatures()) {
+
+            Geometry geo = feature.getGeometry();
+            GeoJsonPoint point = (GeoJsonPoint) geo;
+            MVCrimePoint item = new MVCrimePoint(point.getCoordinates().latitude, point.getCoordinates().longitude, "Title ", "Snippet ");
+            clusterManager.addItem(item);
+        }
+        for (GeoJsonFeature feature : layer5.getFeatures()) {
+
+            Geometry geo = feature.getGeometry();
+            GeoJsonPoint point = (GeoJsonPoint) geo;
+            MVCrimePoint item = new MVCrimePoint(point.getCoordinates().latitude, point.getCoordinates().longitude, "Title ", "Snippet ");
+            clusterManager.addItem(item);
+        }
+        for (GeoJsonFeature feature : layer6.getFeatures()) {
+
+            Geometry geo = feature.getGeometry();
+            GeoJsonPoint point = (GeoJsonPoint) geo;
+            MVCrimePoint item = new MVCrimePoint(point.getCoordinates().latitude, point.getCoordinates().longitude, "Title ", "Snippet ");
+            clusterManager.addItem(item);
         }
         //GeoJsonLayer layer = new GeoJsonLayer(map, point);
-        int breakpoint = 0;
-        //layer.addLayerToMap();
+        // layer.addLayerToMap();
     }
     // [END maps_current_place_on_map_ready]
 
