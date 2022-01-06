@@ -355,26 +355,6 @@ public class MVCrime extends AppCompatActivity
         }
     }
 
-    public double getDistance(double targetLat, double targetLong, double currentLat, double currentLong){
-        double rC = 180/Math.PI;
-
-        double tLat = targetLat/rC;
-        double cLat = currentLat/rC;
-        double tLong = targetLong/rC;
-        double cLong = currentLong/rC;
-
-        double dLong = Math.abs(cLong - tLong);
-        double dLat = Math.abs(cLat-tLat);
-
-        //double a = Math.sin(tLat)*Math.sin(cLat)+Math.cos(tLat)*Math.cos(cLat)*Math.cos(dLong);
-        //double c = Math.acos(a);
-
-        double a = Math.pow(Math.sin(dLat/2),2)+(1-Math.pow(Math.sin(dLat/2),2)-Math.pow(Math.sin((tLat + cLat)/2),2))*(Math.pow(Math.sin(dLong/2),2));
-        double b = 2*3958.8*Math.asin(Math.sqrt(a));
-
-        return b;
-    }
-
     /**
      * Gets the current location of the device, and positions the map's camera.
      */
