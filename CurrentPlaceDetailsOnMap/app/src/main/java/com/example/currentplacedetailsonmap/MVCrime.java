@@ -73,10 +73,10 @@ import javax.sql.DataSource;
 /**
  * An activity that displays a map showing the place at the device's current location.
  */
-public class MapsActivityCurrentPlace extends AppCompatActivity
+public class MVCrime extends AppCompatActivity
         implements OnMapReadyCallback {
 
-    private static final String TAG = MapsActivityCurrentPlace.class.getSimpleName();
+    private static final String TAG = MVCrime.class.getSimpleName();
     private GoogleMap map;
     private CameraPosition cameraPosition;
 
@@ -523,7 +523,7 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
 
                         // Show a dialog offering the user the list of likely places, and add a
                         // marker at the selected place.
-                        MapsActivityCurrentPlace.this.openPlacesDialog();
+                        MVCrime.this.openPlacesDialog();
                     }
                     else {
                         Log.e(TAG, "Exception: %s", task.getException());
