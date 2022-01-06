@@ -260,8 +260,6 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         map.setOnCameraIdleListener(clusterManager);
         map.setOnMarkerClickListener(clusterManager);
 
-        addItems(clusterManager);
-
         GeoJsonLayer layer = null;
         GeoJsonLayer layer2 = null;
         GeoJsonLayer layer3 = null;
@@ -329,22 +327,6 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         // layer.addLayerToMap();
     }
     // [END maps_current_place_on_map_ready]
-
-    private void addItems(ClusterManager<MVCrimePoint> clusterManager) {
-
-        // Set some lat/lng coordinates to start with.
-        double lat = 51.5145160;
-        double lng = -0.1270060;
-
-        // Add ten cluster items in close proximity, for purposes of this example.
-        for (int i = 0; i < 10; i++) {
-            double offset = i / 60d;
-            lat = lat + offset;
-            lng = lng + offset;
-            MVCrimePoint offsetItem = new MVCrimePoint(lat, lng, "Title " + i, "Snippet " + i);
-            clusterManager.addItem(offsetItem);
-        }
-    }
 
     public class MVCrimePoint implements ClusterItem {
         private final LatLng position;
