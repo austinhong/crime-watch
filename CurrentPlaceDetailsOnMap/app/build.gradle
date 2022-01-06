@@ -7,7 +7,7 @@ android {
     compileSdkVersion 30
     buildToolsVersion '28.0.3'
     defaultConfig {
-        applicationId "com.example.currentplacedetailsonmap"
+        applicationId "com.funland.mvcrime"
         minSdkVersion 17
         targetSdkVersion 30
         versionCode 1
